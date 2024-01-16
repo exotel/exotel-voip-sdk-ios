@@ -1,0 +1,758 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0102522F27DF006900C2EBA7 /* NotificationPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102522D27DF006900C2EBA7 /* NotificationPublisher.swift */; };
+		0102523027DF006900C2EBA7 /* RepeatingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102522E27DF006900C2EBA7 /* RepeatingTimer.swift */; };
+		012436A1273927EA004F36E9 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01243694273927EA004F36E9 /* Roboto-ThinItalic.ttf */; };
+		012436A2273927EA004F36E9 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01243695273927EA004F36E9 /* Roboto-Bold.ttf */; };
+		012436A3273927EA004F36E9 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01243696273927EA004F36E9 /* Roboto-Thin.ttf */; };
+		012436A4273927EA004F36E9 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01243697273927EA004F36E9 /* Roboto-Regular.ttf */; };
+		012436A5273927EA004F36E9 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 01243698273927EA004F36E9 /* LICENSE.txt */; };
+		012436A6273927EA004F36E9 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01243699273927EA004F36E9 /* Roboto-BoldItalic.ttf */; };
+		012436A7273927EA004F36E9 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0124369A273927EA004F36E9 /* Roboto-BlackItalic.ttf */; };
+		012436A8273927EA004F36E9 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0124369B273927EA004F36E9 /* Roboto-Light.ttf */; };
+		012436A9273927EA004F36E9 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0124369C273927EA004F36E9 /* Roboto-Medium.ttf */; };
+		012436AA273927EA004F36E9 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0124369D273927EA004F36E9 /* Roboto-Black.ttf */; };
+		012436AB273927EA004F36E9 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0124369E273927EA004F36E9 /* Roboto-LightItalic.ttf */; };
+		012436AC273927EA004F36E9 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0124369F273927EA004F36E9 /* Roboto-Italic.ttf */; };
+		012436AD273927EA004F36E9 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 012436A0273927EA004F36E9 /* Roboto-MediumItalic.ttf */; };
+		01499AD227390465009387FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01499AD127390465009387FD /* AppDelegate.swift */; };
+		01499AD927390465009387FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01499AD727390465009387FD /* Main.storyboard */; };
+		01499ADB27390467009387FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01499ADA27390467009387FD /* Assets.xcassets */; };
+		01499ADE27390467009387FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01499ADC27390467009387FD /* LaunchScreen.storyboard */; };
+		015077DE27C7F753003D1B68 /* DeviceTokenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015077DD27C7F752003D1B68 /* DeviceTokenState.swift */; };
+		017E984B27391F3A00B849CB /* RecentCallsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E984A27391F3A00B849CB /* RecentCallsCell.swift */; };
+		017E984D27391F6400B849CB /* KeypadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E984C27391F6400B849CB /* KeypadCell.swift */; };
+		017E98522739202400B849CB /* ApplicationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E98512739202400B849CB /* ApplicationUtils.swift */; };
+		017E98542739203300B849CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E98532739203300B849CB /* Constants.swift */; };
+		0186F0D027391943006ED654 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186F0CF27391943006ED654 /* LoginViewController.swift */; };
+		0186F0D227391AD5006ED654 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186F0D127391AD5006ED654 /* HomeViewController.swift */; };
+		0186F0D427391E06006ED654 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186F0D327391E06006ED654 /* CallViewController.swift */; };
+		0186F0D627391E84006ED654 /* CustomKeyPadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186F0D527391E84006ED654 /* CustomKeyPadVC.swift */; };
+		01D042342838DE53001ACBE0 /* ContactGroupDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D042332838DE53001ACBE0 /* ContactGroupDetails.swift */; };
+		185B038427A2991800781FAB /* IncomingCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B038327A2991800781FAB /* IncomingCallViewController.swift */; };
+		1863461627A2A9FC00CA4870 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1863461527A2A9FC00CA4870 /* GoogleService-Info.plist */; };
+		4D034BF3282902C2002F1F2F /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D034BF2282902C2002F1F2F /* ContactCell.swift */; };
+		4D48BEDA282CBA2B00B9647F /* CallContextEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D48BED9282CBA2B00B9647F /* CallContextEvents.swift */; };
+		4D57386B27BF813E0027AF0A /* RingTonePlayback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D57386A27BF813E0027AF0A /* RingTonePlayback.swift */; };
+		4D85D25628ABBA5500E14E03 /* ExotelVoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D85D25528ABBA5500E14E03 /* ExotelVoice.framework */; };
+		4D85D25728ABBA5500E14E03 /* ExotelVoice.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D85D25528ABBA5500E14E03 /* ExotelVoice.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4D85D7ED27CE436900FE8121 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85D7EC27CE436900FE8121 /* BuildConfig.swift */; };
+		4D86C03227BE261F00FEF9B2 /* SharedPreferencesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86C03127BE261F00FEF9B2 /* SharedPreferencesHelper.swift */; };
+		4DC4C05227BBC07D0080F3AD /* CallType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4C05127BBC07D0080F3AD /* CallType.swift */; };
+		4DC4C05427BBC0D10080F3AD /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4C05327BBC0D10080F3AD /* DatabaseHelper.swift */; };
+		4DC4C05627BBC13C0080F3AD /* RecentCallDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4C05527BBC13C0080F3AD /* RecentCallDetails.swift */; };
+		57C2B7012881622800472AD4 /* exotel_ringtone_20.wav in Resources */ = {isa = PBXBuildFile; fileRef = 57C2B7002881622800472AD4 /* exotel_ringtone_20.wav */; };
+		57D242B2285C376E007AE331 /* callwaiting_tone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57D242AE285C376E007AE331 /* callwaiting_tone.mp3 */; };
+		57D242B3285C376E007AE331 /* exotel_ringtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57D242AF285C376E007AE331 /* exotel_ringtone.mp3 */; };
+		57D242B4285C376E007AE331 /* busy_tone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57D242B0285C376E007AE331 /* busy_tone.mp3 */; };
+		57D242B5285C376E007AE331 /* reorder_tone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57D242B1285C376E007AE331 /* reorder_tone.mp3 */; };
+		9F180CF027B8E36F0056DBA4 /* VoiceAppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F180CEF27B8E36F0056DBA4 /* VoiceAppError.swift */; };
+		9F180CF227B94DCF0056DBA4 /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F180CF127B94DCF0056DBA4 /* PushNotificationData.swift */; };
+		9FB8E5C627B3CE9100916F9E /* VoiceAppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8E5C527B3CE9100916F9E /* VoiceAppService.swift */; };
+		9FB8E5C827B3CFE100916F9E /* VoiceAppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8E5C727B3CFE100916F9E /* VoiceAppLogger.swift */; };
+		9FB8E5CC27B55CBE00916F9E /* VoiceAppStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8E5CB27B55CBE00916F9E /* VoiceAppStatus.swift */; };
+		9FB8E5CE27B55D0F00916F9E /* VoiceAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8E5CD27B55D0F00916F9E /* VoiceAppState.swift */; };
+		C9F38D7EE797CC72A603EA06 /* Pods_ExotelVoiceSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC5C09D70209821A63016F57 /* Pods_ExotelVoiceSample.framework */; };
+		FA8780252AE71D9B00313E89 /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8780242AE71D9B00313E89 /* ProviderDelegate.swift */; };
+		FA8780272AF1551900313E89 /* CallKitUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8780262AF1551800313E89 /* CallKitUtils.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4D85D25828ABBA5500E14E03 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4D85D25728ABBA5500E14E03 /* ExotelVoice.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0102522D27DF006900C2EBA7 /* NotificationPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPublisher.swift; sourceTree = "<group>"; };
+		0102522E27DF006900C2EBA7 /* RepeatingTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatingTimer.swift; sourceTree = "<group>"; };
+		01243694273927EA004F36E9 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		01243695273927EA004F36E9 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		01243696273927EA004F36E9 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		01243697273927EA004F36E9 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		01243698273927EA004F36E9 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		01243699273927EA004F36E9 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		0124369A273927EA004F36E9 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		0124369B273927EA004F36E9 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		0124369C273927EA004F36E9 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		0124369D273927EA004F36E9 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		0124369E273927EA004F36E9 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		0124369F273927EA004F36E9 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		012436A0273927EA004F36E9 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		01499ACE27390465009387FD /* ExotelVoiceSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExotelVoiceSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01499AD127390465009387FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		01499AD827390465009387FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		01499ADA27390467009387FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		01499ADD27390467009387FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		01499ADF27390467009387FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		015077DD27C7F752003D1B68 /* DeviceTokenState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTokenState.swift; sourceTree = "<group>"; };
+		017E984A27391F3A00B849CB /* RecentCallsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCallsCell.swift; sourceTree = "<group>"; };
+		017E984C27391F6400B849CB /* KeypadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadCell.swift; sourceTree = "<group>"; };
+		017E98512739202400B849CB /* ApplicationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationUtils.swift; sourceTree = "<group>"; };
+		017E98532739203300B849CB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0186F0CF27391943006ED654 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0186F0D127391AD5006ED654 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0186F0D327391E06006ED654 /* CallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
+		0186F0D527391E84006ED654 /* CustomKeyPadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKeyPadVC.swift; sourceTree = "<group>"; };
+		01D042332838DE53001ACBE0 /* ContactGroupDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactGroupDetails.swift; sourceTree = "<group>"; };
+		185B038327A2991800781FAB /* IncomingCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingCallViewController.swift; sourceTree = "<group>"; };
+		1863461527A2A9FC00CA4870 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1863462927A2AD1500CA4870 /* ExotelVoiceSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ExotelVoiceSample.entitlements; sourceTree = "<group>"; };
+		4D034BF2282902C2002F1F2F /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		4D48BED9282CBA2B00B9647F /* CallContextEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallContextEvents.swift; sourceTree = "<group>"; };
+		4D505766289BACA50006419D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		4D505768289BACE30006419D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4D57386A27BF813E0027AF0A /* RingTonePlayback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingTonePlayback.swift; sourceTree = "<group>"; };
+		4D85D25528ABBA5500E14E03 /* ExotelVoice.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ExotelVoice.framework; sourceTree = "<group>"; };
+		4D85D7EC27CE436900FE8121 /* BuildConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfig.swift; sourceTree = "<group>"; };
+		4D86C03127BE261F00FEF9B2 /* SharedPreferencesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPreferencesHelper.swift; sourceTree = "<group>"; };
+		4DC4C05127BBC07D0080F3AD /* CallType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallType.swift; sourceTree = "<group>"; };
+		4DC4C05327BBC0D10080F3AD /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		4DC4C05527BBC13C0080F3AD /* RecentCallDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCallDetails.swift; sourceTree = "<group>"; };
+		57C2B7002881622800472AD4 /* exotel_ringtone_20.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = exotel_ringtone_20.wav; sourceTree = "<group>"; };
+		57D242AE285C376E007AE331 /* callwaiting_tone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = callwaiting_tone.mp3; path = "../../../Exotel-Voice/Sound/callwaiting_tone.mp3"; sourceTree = "<group>"; };
+		57D242AF285C376E007AE331 /* exotel_ringtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = exotel_ringtone.mp3; path = "../../../Exotel-Voice/Sound/exotel_ringtone.mp3"; sourceTree = "<group>"; };
+		57D242B0285C376E007AE331 /* busy_tone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = busy_tone.mp3; path = "../../../Exotel-Voice/Sound/busy_tone.mp3"; sourceTree = "<group>"; };
+		57D242B1285C376E007AE331 /* reorder_tone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = reorder_tone.mp3; path = "../../../Exotel-Voice/Sound/reorder_tone.mp3"; sourceTree = "<group>"; };
+		9F180CEF27B8E36F0056DBA4 /* VoiceAppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAppError.swift; sourceTree = "<group>"; };
+		9F180CF127B94DCF0056DBA4 /* PushNotificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationData.swift; sourceTree = "<group>"; };
+		9FB8E5C527B3CE9100916F9E /* VoiceAppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAppService.swift; sourceTree = "<group>"; };
+		9FB8E5C727B3CFE100916F9E /* VoiceAppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAppLogger.swift; sourceTree = "<group>"; };
+		9FB8E5CB27B55CBE00916F9E /* VoiceAppStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAppStatus.swift; sourceTree = "<group>"; };
+		9FB8E5CD27B55D0F00916F9E /* VoiceAppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAppState.swift; sourceTree = "<group>"; };
+		A7459C87E3A92BAF78825AA0 /* Pods-ExotelVoiceSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExotelVoiceSample.debug.xcconfig"; path = "Target Support Files/Pods-ExotelVoiceSample/Pods-ExotelVoiceSample.debug.xcconfig"; sourceTree = "<group>"; };
+		BC82E0B75CC0AAF3CD983048 /* Pods-ExotelVoiceSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExotelVoiceSample.release.xcconfig"; path = "Target Support Files/Pods-ExotelVoiceSample/Pods-ExotelVoiceSample.release.xcconfig"; sourceTree = "<group>"; };
+		DC5C09D70209821A63016F57 /* Pods_ExotelVoiceSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExotelVoiceSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA8780242AE71D9B00313E89 /* ProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
+		FA8780262AF1551800313E89 /* CallKitUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKitUtils.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01499ACB27390465009387FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D85D25628ABBA5500E14E03 /* ExotelVoice.framework in Frameworks */,
+				C9F38D7EE797CC72A603EA06 /* Pods_ExotelVoiceSample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01243693273927C8004F36E9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				01243698273927EA004F36E9 /* LICENSE.txt */,
+				0124369D273927EA004F36E9 /* Roboto-Black.ttf */,
+				0124369A273927EA004F36E9 /* Roboto-BlackItalic.ttf */,
+				01243695273927EA004F36E9 /* Roboto-Bold.ttf */,
+				01243699273927EA004F36E9 /* Roboto-BoldItalic.ttf */,
+				0124369F273927EA004F36E9 /* Roboto-Italic.ttf */,
+				0124369B273927EA004F36E9 /* Roboto-Light.ttf */,
+				0124369E273927EA004F36E9 /* Roboto-LightItalic.ttf */,
+				0124369C273927EA004F36E9 /* Roboto-Medium.ttf */,
+				012436A0273927EA004F36E9 /* Roboto-MediumItalic.ttf */,
+				01243697273927EA004F36E9 /* Roboto-Regular.ttf */,
+				01243696273927EA004F36E9 /* Roboto-Thin.ttf */,
+				01243694273927EA004F36E9 /* Roboto-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		01499AC527390465009387FD = {
+			isa = PBXGroup;
+			children = (
+				01499AD027390465009387FD /* ExotelVoiceSample */,
+				01499ACF27390465009387FD /* Products */,
+				EB996DBB445622343C7C8BEA /* Pods */,
+				7BBD5D2E06AC626820D6BBA1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		01499ACF27390465009387FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01499ACE27390465009387FD /* ExotelVoiceSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		01499AD027390465009387FD /* ExotelVoiceSample */ = {
+			isa = PBXGroup;
+			children = (
+				01499ADA27390467009387FD /* Assets.xcassets */,
+				4D57386727BF800D0027AF0A /* Components */,
+				9FB8E5C927B55C7B00916F9E /* Controllers */,
+				1863462927A2AD1500CA4870 /* ExotelVoiceSample.entitlements */,
+				01243693273927C8004F36E9 /* Fonts */,
+				1863461527A2A9FC00CA4870 /* GoogleService-Info.plist */,
+				01499ADF27390467009387FD /* Info.plist */,
+				4D57386827BF805E0027AF0A /* Screens */,
+				57D242AD285C3756007AE331 /* Sound */,
+				01572D3C2755074800EB73A4 /* Utils */,
+				9FB8E5CA27B55C9800916F9E /* VoiceApp */,
+			);
+			path = ExotelVoiceSample;
+			sourceTree = "<group>";
+		};
+		01572D3C2755074800EB73A4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				017E98512739202400B849CB /* ApplicationUtils.swift */,
+				FA8780262AF1551800313E89 /* CallKitUtils.swift */,
+				4D85D7EC27CE436900FE8121 /* BuildConfig.swift */,
+				017E98532739203300B849CB /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4D57386727BF800D0027AF0A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4D034BF2282902C2002F1F2F /* ContactCell.swift */,
+				017E984C27391F6400B849CB /* KeypadCell.swift */,
+				017E984A27391F3A00B849CB /* RecentCallsCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4D57386827BF805E0027AF0A /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				01499ADC27390467009387FD /* LaunchScreen.storyboard */,
+				01499AD727390465009387FD /* Main.storyboard */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		57D242AD285C3756007AE331 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				57D242B0285C376E007AE331 /* busy_tone.mp3 */,
+				57D242AE285C376E007AE331 /* callwaiting_tone.mp3 */,
+				57C2B7002881622800472AD4 /* exotel_ringtone_20.wav */,
+				57D242AF285C376E007AE331 /* exotel_ringtone.mp3 */,
+				57D242B1285C376E007AE331 /* reorder_tone.mp3 */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		7BBD5D2E06AC626820D6BBA1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D85D25528ABBA5500E14E03 /* ExotelVoice.framework */,
+				DC5C09D70209821A63016F57 /* Pods_ExotelVoiceSample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9FB8E5C927B55C7B00916F9E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0186F0D327391E06006ED654 /* CallViewController.swift */,
+				0186F0D527391E84006ED654 /* CustomKeyPadVC.swift */,
+				0186F0D127391AD5006ED654 /* HomeViewController.swift */,
+				185B038327A2991800781FAB /* IncomingCallViewController.swift */,
+				0186F0CF27391943006ED654 /* LoginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9FB8E5CA27B55C9800916F9E /* VoiceApp */ = {
+			isa = PBXGroup;
+			children = (
+				01499AD127390465009387FD /* AppDelegate.swift */,
+				4D48BED9282CBA2B00B9647F /* CallContextEvents.swift */,
+				4DC4C05127BBC07D0080F3AD /* CallType.swift */,
+				01D042332838DE53001ACBE0 /* ContactGroupDetails.swift */,
+				4DC4C05327BBC0D10080F3AD /* DatabaseHelper.swift */,
+				015077DD27C7F752003D1B68 /* DeviceTokenState.swift */,
+				0102522D27DF006900C2EBA7 /* NotificationPublisher.swift */,
+				9F180CF127B94DCF0056DBA4 /* PushNotificationData.swift */,
+				4DC4C05527BBC13C0080F3AD /* RecentCallDetails.swift */,
+				0102522E27DF006900C2EBA7 /* RepeatingTimer.swift */,
+				4D57386A27BF813E0027AF0A /* RingTonePlayback.swift */,
+				4D86C03127BE261F00FEF9B2 /* SharedPreferencesHelper.swift */,
+				9F180CEF27B8E36F0056DBA4 /* VoiceAppError.swift */,
+				9FB8E5C727B3CFE100916F9E /* VoiceAppLogger.swift */,
+				9FB8E5C527B3CE9100916F9E /* VoiceAppService.swift */,
+				9FB8E5CD27B55D0F00916F9E /* VoiceAppState.swift */,
+				9FB8E5CB27B55CBE00916F9E /* VoiceAppStatus.swift */,
+				FA8780242AE71D9B00313E89 /* ProviderDelegate.swift */,
+			);
+			path = VoiceApp;
+			sourceTree = "<group>";
+		};
+		EB996DBB445622343C7C8BEA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7459C87E3A92BAF78825AA0 /* Pods-ExotelVoiceSample.debug.xcconfig */,
+				BC82E0B75CC0AAF3CD983048 /* Pods-ExotelVoiceSample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01499ACD27390465009387FD /* ExotelVoiceSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01499AE227390467009387FD /* Build configuration list for PBXNativeTarget "ExotelVoiceSample" */;
+			buildPhases = (
+				2D7592BE7C292B82571FE0C1 /* [CP] Check Pods Manifest.lock */,
+				01499ACA27390465009387FD /* Sources */,
+				01499ACB27390465009387FD /* Frameworks */,
+				01499ACC27390465009387FD /* Resources */,
+				8776CE53FA97E609FD49713B /* [CP] Embed Pods Frameworks */,
+				57C3033A28605BC10009144B /* ShellScript */,
+				4D85D25828ABBA5500E14E03 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExotelVoiceSample;
+			productName = "Exotel Voice Application";
+			productReference = 01499ACE27390465009387FD /* ExotelVoiceSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01499AC627390465009387FD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					01499ACD27390465009387FD = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 01499AC927390465009387FD /* Build configuration list for PBXProject "ExotelVoiceSample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 01499AC527390465009387FD;
+			productRefGroup = 01499ACF27390465009387FD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01499ACD27390465009387FD /* ExotelVoiceSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		01499ACC27390465009387FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				012436A6273927EA004F36E9 /* Roboto-BoldItalic.ttf in Resources */,
+				012436A1273927EA004F36E9 /* Roboto-ThinItalic.ttf in Resources */,
+				012436AB273927EA004F36E9 /* Roboto-LightItalic.ttf in Resources */,
+				012436A4273927EA004F36E9 /* Roboto-Regular.ttf in Resources */,
+				57D242B3285C376E007AE331 /* exotel_ringtone.mp3 in Resources */,
+				012436A8273927EA004F36E9 /* Roboto-Light.ttf in Resources */,
+				01499ADE27390467009387FD /* LaunchScreen.storyboard in Resources */,
+				012436A3273927EA004F36E9 /* Roboto-Thin.ttf in Resources */,
+				012436AC273927EA004F36E9 /* Roboto-Italic.ttf in Resources */,
+				57D242B2285C376E007AE331 /* callwaiting_tone.mp3 in Resources */,
+				57C2B7012881622800472AD4 /* exotel_ringtone_20.wav in Resources */,
+				012436A5273927EA004F36E9 /* LICENSE.txt in Resources */,
+				012436A2273927EA004F36E9 /* Roboto-Bold.ttf in Resources */,
+				012436A9273927EA004F36E9 /* Roboto-Medium.ttf in Resources */,
+				012436AA273927EA004F36E9 /* Roboto-Black.ttf in Resources */,
+				1863461627A2A9FC00CA4870 /* GoogleService-Info.plist in Resources */,
+				57D242B4285C376E007AE331 /* busy_tone.mp3 in Resources */,
+				012436AD273927EA004F36E9 /* Roboto-MediumItalic.ttf in Resources */,
+				012436A7273927EA004F36E9 /* Roboto-BlackItalic.ttf in Resources */,
+				57D242B5285C376E007AE331 /* reorder_tone.mp3 in Resources */,
+				01499ADB27390467009387FD /* Assets.xcassets in Resources */,
+				01499AD927390465009387FD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D7592BE7C292B82571FE0C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ExotelVoiceSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57C3033A28605BC10009144B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(BUILT_PRODUCTS_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(BUILT_PRODUCTS_DIR)/$(EXECUTABLE_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n\n";
+		};
+		8776CE53FA97E609FD49713B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ExotelVoiceSample/Pods-ExotelVoiceSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ExotelVoiceSample/Pods-ExotelVoiceSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ExotelVoiceSample/Pods-ExotelVoiceSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01499ACA27390465009387FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D57386B27BF813E0027AF0A /* RingTonePlayback.swift in Sources */,
+				4DC4C05627BBC13C0080F3AD /* RecentCallDetails.swift in Sources */,
+				0186F0D227391AD5006ED654 /* HomeViewController.swift in Sources */,
+				0102522F27DF006900C2EBA7 /* NotificationPublisher.swift in Sources */,
+				185B038427A2991800781FAB /* IncomingCallViewController.swift in Sources */,
+				017E98522739202400B849CB /* ApplicationUtils.swift in Sources */,
+				FA8780272AF1551900313E89 /* CallKitUtils.swift in Sources */,
+				FA8780252AE71D9B00313E89 /* ProviderDelegate.swift in Sources */,
+				017E984D27391F6400B849CB /* KeypadCell.swift in Sources */,
+				0186F0D027391943006ED654 /* LoginViewController.swift in Sources */,
+				017E984B27391F3A00B849CB /* RecentCallsCell.swift in Sources */,
+				9F180CF227B94DCF0056DBA4 /* PushNotificationData.swift in Sources */,
+				4D86C03227BE261F00FEF9B2 /* SharedPreferencesHelper.swift in Sources */,
+				9FB8E5CC27B55CBE00916F9E /* VoiceAppStatus.swift in Sources */,
+				9F180CF027B8E36F0056DBA4 /* VoiceAppError.swift in Sources */,
+				0186F0D627391E84006ED654 /* CustomKeyPadVC.swift in Sources */,
+				4DC4C05427BBC0D10080F3AD /* DatabaseHelper.swift in Sources */,
+				0102523027DF006900C2EBA7 /* RepeatingTimer.swift in Sources */,
+				0186F0D427391E06006ED654 /* CallViewController.swift in Sources */,
+				01499AD227390465009387FD /* AppDelegate.swift in Sources */,
+				9FB8E5CE27B55D0F00916F9E /* VoiceAppState.swift in Sources */,
+				01D042342838DE53001ACBE0 /* ContactGroupDetails.swift in Sources */,
+				015077DE27C7F753003D1B68 /* DeviceTokenState.swift in Sources */,
+				4D85D7ED27CE436900FE8121 /* BuildConfig.swift in Sources */,
+				4D48BEDA282CBA2B00B9647F /* CallContextEvents.swift in Sources */,
+				017E98542739203300B849CB /* Constants.swift in Sources */,
+				9FB8E5C827B3CFE100916F9E /* VoiceAppLogger.swift in Sources */,
+				9FB8E5C627B3CE9100916F9E /* VoiceAppService.swift in Sources */,
+				4D034BF3282902C2002F1F2F /* ContactCell.swift in Sources */,
+				4DC4C05227BBC07D0080F3AD /* CallType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		01499AD727390465009387FD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01499AD827390465009387FD /* Base */,
+				4D505766289BACA50006419D /* en */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		01499ADC27390467009387FD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01499ADD27390467009387FD /* Base */,
+				4D505768289BACE30006419D /* en */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		01499AE027390467009387FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Debug;
+		};
+		01499AE127390467009387FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		01499AE327390467009387FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7459C87E3A92BAF78825AA0 /* Pods-ExotelVoiceSample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ExotelVoiceSample/ExotelVoiceSample.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 92;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = D6JC9BY9C7;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = D6JC9BY9C7;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/ExotelVoiceSample",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				INFOPLIST_FILE = ExotelVoiceSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = "";
+				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DHIDE_MULTI_CALL";
+				PRODUCT_BUNDLE_IDENTIFIER = com.exotel.voicesample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Exotel Voice Sample App Developer Profile";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TVOS_DEPLOYMENT_TARGET = "";
+				VALIDATE_PRODUCT = YES;
+				VALIDATE_WORKSPACE = YES;
+				WATCHOS_DEPLOYMENT_TARGET = "";
+			};
+			name = Debug;
+		};
+		01499AE427390467009387FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC82E0B75CC0AAF3CD983048 /* Pods-ExotelVoiceSample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ExotelVoiceSample/ExotelVoiceSample.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 93;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = D6JC9BY9C7;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/ExotelVoiceSample",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				INFOPLIST_FILE = ExotelVoiceSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = "";
+				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DHIDE_MULTI_CALL";
+				PRODUCT_BUNDLE_IDENTIFIER = com.exotel.voicesample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Exotel Voice Sample App Developer Profile";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TVOS_DEPLOYMENT_TARGET = "";
+				VALIDATE_PRODUCT = YES;
+				VALIDATE_WORKSPACE = YES;
+				WATCHOS_DEPLOYMENT_TARGET = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01499AC927390465009387FD /* Build configuration list for PBXProject "ExotelVoiceSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01499AE027390467009387FD /* Debug */,
+				01499AE127390467009387FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01499AE227390467009387FD /* Build configuration list for PBXNativeTarget "ExotelVoiceSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01499AE327390467009387FD /* Debug */,
+				01499AE427390467009387FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01499AC627390465009387FD /* Project object */;
+}
