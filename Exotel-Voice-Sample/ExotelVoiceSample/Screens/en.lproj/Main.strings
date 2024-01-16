@@ -1,0 +1,123 @@
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "20O-Z8-YvM"; */
+"20O-Z8-YvM.text" = "Password";
+
+/* Class = "UILabel"; text = "Contacts"; ObjectID = "3jq-VT-1ao"; */
+"3jq-VT-1ao.text" = "Contacts";
+
+/* Class = "UILabel"; text = "Exotel Voice App Demo!!"; ObjectID = "5ng-cA-dvX"; */
+"5ng-cA-dvX.text" = "";
+
+/* Class = "UILabel"; text = "Today"; ObjectID = "7ss-0g-rgK"; */
+"7ss-0g-rgK.text" = "Today";
+
+/* Class = "UILabel"; text = "Exotel Voice Application"; ObjectID = "BRd-tG-c23"; */
+"BRd-tG-c23.text" = "Exotel Voice Application";
+
+/* Class = "UIButton"; normalTitle = "CANCEL"; ObjectID = "Cde-Tu-JXI"; */
+"Cde-Tu-JXI.normalTitle" = "CANCEL";
+
+/* Class = "UILabel"; text = "Outgoing"; ObjectID = "Cte-33-Q3D"; */
+"Cte-33-Q3D.text" = "Outgoing";
+
+/* Class = "UILabel"; text = "Issue:"; ObjectID = "DNh-7u-fLu"; */
+"DNh-7u-fLu.text" = "Issue:";
+
+/* Class = "UIButton"; normalTitle = "LOGIN"; ObjectID = "GAn-di-CF0"; */
+"GAn-di-CF0.normalTitle" = "LOGIN";
+
+/* Class = "UILabel"; text = "\"\""; ObjectID = "HQa-Nn-kpn"; */
+"HQa-Nn-kpn.text" = "\"\"";
+
+/* Class = "UILabel"; text = "Account SID"; ObjectID = "K3l-XL-cCV"; */
+"K3l-XL-cCV.text" = "Account SID";
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "Kfp-ka-I5d"; */
+"Kfp-ka-I5d.normalTitle" = "OK";
+
+/* Class = "UILabel"; text = "Exotel Voice Application"; ObjectID = "MQw-tg-6eo"; */
+"MQw-tg-6eo.text" = "Exotel Voice Application";
+
+/* Class = "UILabel"; text = "Rating:"; ObjectID = "MWp-kr-GHv"; */
+"MWp-kr-GHv.text" = "Rating:";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "Nb1-lq-zJA"; */
+"Nb1-lq-zJA.text" = "1";
+
+/* Class = "UILabel"; text = "Exotel Voice Application"; ObjectID = "SWV-x8-pdJ"; */
+"SWV-x8-pdJ.text" = "Exotel Voice Application";
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "UMO-cz-Neo"; */
+"UMO-cz-Neo.normalTitle" = "OK";
+
+/* Class = "UILabel"; text = "970131903"; ObjectID = "UNj-vD-MBu"; */
+"UNj-vD-MBu.text" = "970131903";
+
+/* Class = "UILabel"; text = "Accept"; ObjectID = "UmU-UG-jiF"; */
+"UmU-UG-jiF.text" = "Accept";
+
+/* Class = "UILabel"; text = "Decline"; ObjectID = "Uvc-FD-tEi"; */
+"Uvc-FD-tEi.text" = "Decline";
+
+/* Class = "UILabel"; text = "Dial To"; ObjectID = "WDd-Vy-EWu"; */
+"WDd-Vy-EWu.text" = "Dial To";
+
+/* Class = "UILabel"; text = "Dial"; ObjectID = "WQR-8x-Mn7"; */
+"WQR-8x-Mn7.text" = "Dial";
+
+/* Class = "UIButton"; normalTitle = "HIDE KEYPAD"; ObjectID = "X32-uR-4eI"; */
+"X32-uR-4eI.normalTitle" = "HIDE KEYPAD";
+
+/* Class = "UILabel"; text = "Display Name"; ObjectID = "Xk3-xT-qIg"; */
+"Xk3-xT-qIg.text" = "Display Name";
+
+/* Class = "UIButton"; normalTitle = "CANCEL"; ObjectID = "bdy-tq-yL7"; */
+"bdy-tq-yL7.normalTitle" = "CANCEL";
+
+/* Class = "UILabel"; text = "Status"; ObjectID = "fGW-s4-fsp"; */
+"fGW-s4-fsp.text" = "Status";
+
+/* Class = "UITextView"; text = "exotel675"; ObjectID = "gEY-aD-tLo"; */
+"gEY-aD-tLo.text" = "exotel675";
+
+/* Class = "UILabel"; text = "Welcome to"; ObjectID = "hix-GM-fTw"; */
+"hix-GM-fTw.text" = "Login     ";
+
+/* Class = "UILabel"; text = "\"\""; ObjectID = "jd0-Yy-nyy"; */
+"jd0-Yy-nyy.text" = "\"\"";
+
+/* Class = "UIButton"; normalTitle = "SHOW KEYPAD"; ObjectID = "jxW-of-BR7"; */
+"jxW-of-BR7.normalTitle" = "SHOW KEYPAD";
+
+/* Class = "UILabel"; text = "Description:"; ObjectID = "lFo-Yg-dAO"; */
+"lFo-Yg-dAO.text" = "Description:";
+
+/* Class = "UILabel"; text = "User ID"; ObjectID = "mU7-Ur-VkB"; */
+"mU7-Ur-VkB.text" = "User ID";
+
+/* Class = "UILabel"; text = "970131903"; ObjectID = "mrt-KC-h71"; */
+"mrt-KC-h71.text" = "970131903";
+
+/* Class = "UITextView"; text = "https://bellatrix.apac-sg.exotel.in/v1"; ObjectID = "p8a-vh-tLA"; */
+"p8a-vh-tLA.text" = "https://bellatrix.apac-sg.exotel.in/v1";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "q9S-ps-ClQ"; */
+"q9S-ps-ClQ.text" = "2";
+
+/* Class = "UILabel"; text = "Exotel Voice Application"; ObjectID = "sIN-uc-Xvg"; */
+"sIN-uc-Xvg.text" = "Exotel Voice Application";
+
+/* Class = "UIButton"; normalTitle = "SHOW KEYPAD"; ObjectID = "tAN-BT-vor"; */
+"tAN-BT-vor.normalTitle" = "SHOW KEYPAD";
+
+/* Class = "UILabel"; text = "Recent Calls"; ObjectID = "tMb-FI-von"; */
+"tMb-FI-von.text" = "Recent Calls";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "vZF-sT-Og4"; */
+"vZF-sT-Og4.text" = "2";
+
+/* Class = "UILabel"; text = "User"; ObjectID = "y8m-yg-dLC"; */
+"y8m-yg-dLC.text" = "User";
+
+/* Class = "UILabel"; text = "Hostname"; ObjectID = "znx-qZ-m48"; */
+"znx-qZ-m48.text" = "Hostname";
