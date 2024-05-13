@@ -122,3 +122,4 @@ build_output
 ExotelVoice.framework
 libCloudonixSDK.a
 libthirdparty.a
+ExotelVoice.xcframework
