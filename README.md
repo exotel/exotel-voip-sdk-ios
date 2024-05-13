@@ -1,11 +1,11 @@
 # exotel-voip-sdk-ios
 Contains SDK, integration guide, sample app code and API documentation.
 
-Latest SDK Version : [1.0.2](https://github.com/exotel/exotel-voip-sdk-ios/releases/tag/1.0.2)
+Latest SDK Version : [1.0.3](https://github.com/exotel/exotel-voip-sdk-ios/releases/tag/1.0.3)
 
 ## Exotel Voice SDK
 Download the ExotelVoice.framework.zip sdk file and unzip it, follow the instructions provided in [Exotel Voice Client IOS SDK Integration Guide.pdf](https://github.com/exotel/exotel-voip-sdk-ios/blob/main/Exotel%20Voice%20Client%20IOS%20SDK%20Integration%20Guide.pdf).  
-Latest SDK : [ExotelVoice-1.0.2.framework.zip](https://github.com/exotel/exotel-voip-sdk-ios/releases/download/1.0.2/ExotelVoice-1.0.2.framework.zip)
+Latest SDK : (./SDK)
 
 
 
