@@ -42,7 +42,6 @@
 		4D48BEDA282CBA2B00B9647F /* CallContextEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D48BED9282CBA2B00B9647F /* CallContextEvents.swift */; };
 		4D57386B27BF813E0027AF0A /* RingTonePlayback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D57386A27BF813E0027AF0A /* RingTonePlayback.swift */; };
 		4D85D25628ABBA5500E14E03 /* ExotelVoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D85D25528ABBA5500E14E03 /* ExotelVoice.framework */; };
-		4D85D25728ABBA5500E14E03 /* ExotelVoice.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D85D25528ABBA5500E14E03 /* ExotelVoice.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4D85D7ED27CE436900FE8121 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85D7EC27CE436900FE8121 /* BuildConfig.swift */; };
 		4D86C03227BE261F00FEF9B2 /* SharedPreferencesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86C03127BE261F00FEF9B2 /* SharedPreferencesHelper.swift */; };
 		4DC4C05227BBC07D0080F3AD /* CallType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4C05127BBC07D0080F3AD /* CallType.swift */; };
@@ -62,6 +61,7 @@
 		FA19D25F2BECC390008A84AE /* reorder_tone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA19D25B2BECC390008A84AE /* reorder_tone.mp3 */; };
 		FA8780252AE71D9B00313E89 /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8780242AE71D9B00313E89 /* ProviderDelegate.swift */; };
 		FA8780272AF1551900313E89 /* CallKitUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8780262AF1551800313E89 /* CallKitUtils.swift */; };
+		FACF8FA22BF217FD005991BD /* ExotelVoice.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FACF8F9E2BF2171C005991BD /* ExotelVoice.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,7 +71,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4D85D25728ABBA5500E14E03 /* ExotelVoice.framework in Embed Frameworks */,
+				FACF8FA22BF217FD005991BD /* ExotelVoice.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +145,7 @@
 		FA19D25B2BECC390008A84AE /* reorder_tone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = reorder_tone.mp3; path = ExotelVoiceSample/Sound/reorder_tone.mp3; sourceTree = "<group>"; };
 		FA8780242AE71D9B00313E89 /* ProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
 		FA8780262AF1551800313E89 /* CallKitUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKitUtils.swift; sourceTree = "<group>"; };
+		FACF8F9E2BF2171C005991BD /* ExotelVoice.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ExotelVoice.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +184,7 @@
 		01499AC527390465009387FD = {
 			isa = PBXGroup;
 			children = (
+				FACF8F9E2BF2171C005991BD /* ExotelVoice.xcframework */,
 				FA19D25A2BECC38F008A84AE /* busy_tone.mp3 */,
 				FA19D2582BECC38F008A84AE /* callwaiting_tone.mp3 */,
 				FA19D2592BECC38F008A84AE /* exotel_ringtone_20.wav */,
