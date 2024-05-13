@@ -10,7 +10,7 @@
 	<string>app-store</string>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>com.exotel.voicesample</key>
+		<key>com.exotel.apptoapp</key>
 		<string>Exotel Voice Sample App Distribution Profile</string>
 	</dict>
 	<key>signingCertificate</key>
