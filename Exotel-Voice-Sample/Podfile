@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+ platform :ios, '13.0'
 
 target 'ExotelVoiceSample' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -8,10 +8,20 @@ target 'ExotelVoiceSample' do
   # Pods for ExotelVoiceSample
    pod 'IQKeyboardManagerSwift', '6.3.0'
    pod 'DropDown'
-   pod 'Alamofire', '~> 4.0'
+   pod 'Alamofire'
    pod 'SVProgressHUD'
-   pod 'Firebase/Analytics', '8.13.0'
-   pod 'Firebase/Messaging', '8.13.0'
+   pod 'Firebase/Analytics'
+   pod 'Firebase/Messaging'
    pod 'Firebase/Crashlytics'
    pod 'SQLite.swift', '~> 0.11.5'
+end
+
+post_install do |installer|
+    installer.generated_projects.each do |project|
+        project.targets.each do |target|
+            target.build_configurations.each do |config|
+                config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+            end
+        end
+    end
 end

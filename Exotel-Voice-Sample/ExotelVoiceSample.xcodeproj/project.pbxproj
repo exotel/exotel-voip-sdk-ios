@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -42,17 +42,12 @@
 		4D48BEDA282CBA2B00B9647F /* CallContextEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D48BED9282CBA2B00B9647F /* CallContextEvents.swift */; };
 		4D57386B27BF813E0027AF0A /* RingTonePlayback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D57386A27BF813E0027AF0A /* RingTonePlayback.swift */; };
 		4D85D25628ABBA5500E14E03 /* ExotelVoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D85D25528ABBA5500E14E03 /* ExotelVoice.framework */; };
-		4D85D25728ABBA5500E14E03 /* ExotelVoice.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D85D25528ABBA5500E14E03 /* ExotelVoice.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4D85D7ED27CE436900FE8121 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85D7EC27CE436900FE8121 /* BuildConfig.swift */; };
 		4D86C03227BE261F00FEF9B2 /* SharedPreferencesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86C03127BE261F00FEF9B2 /* SharedPreferencesHelper.swift */; };
 		4DC4C05227BBC07D0080F3AD /* CallType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4C05127BBC07D0080F3AD /* CallType.swift */; };
 		4DC4C05427BBC0D10080F3AD /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4C05327BBC0D10080F3AD /* DatabaseHelper.swift */; };
 		4DC4C05627BBC13C0080F3AD /* RecentCallDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC4C05527BBC13C0080F3AD /* RecentCallDetails.swift */; };
 		57C2B7012881622800472AD4 /* exotel_ringtone_20.wav in Resources */ = {isa = PBXBuildFile; fileRef = 57C2B7002881622800472AD4 /* exotel_ringtone_20.wav */; };
-		57D242B2285C376E007AE331 /* callwaiting_tone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57D242AE285C376E007AE331 /* callwaiting_tone.mp3 */; };
-		57D242B3285C376E007AE331 /* exotel_ringtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57D242AF285C376E007AE331 /* exotel_ringtone.mp3 */; };
-		57D242B4285C376E007AE331 /* busy_tone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57D242B0285C376E007AE331 /* busy_tone.mp3 */; };
-		57D242B5285C376E007AE331 /* reorder_tone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57D242B1285C376E007AE331 /* reorder_tone.mp3 */; };
 		9F180CF027B8E36F0056DBA4 /* VoiceAppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F180CEF27B8E36F0056DBA4 /* VoiceAppError.swift */; };
 		9F180CF227B94DCF0056DBA4 /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F180CF127B94DCF0056DBA4 /* PushNotificationData.swift */; };
 		9FB8E5C627B3CE9100916F9E /* VoiceAppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8E5C527B3CE9100916F9E /* VoiceAppService.swift */; };
@@ -60,8 +55,13 @@
 		9FB8E5CC27B55CBE00916F9E /* VoiceAppStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8E5CB27B55CBE00916F9E /* VoiceAppStatus.swift */; };
 		9FB8E5CE27B55D0F00916F9E /* VoiceAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8E5CD27B55D0F00916F9E /* VoiceAppState.swift */; };
 		C9F38D7EE797CC72A603EA06 /* Pods_ExotelVoiceSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC5C09D70209821A63016F57 /* Pods_ExotelVoiceSample.framework */; };
+		FA19D25C2BECC390008A84AE /* exotel_ringtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA19D2572BECC38F008A84AE /* exotel_ringtone.mp3 */; };
+		FA19D25D2BECC390008A84AE /* callwaiting_tone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA19D2582BECC38F008A84AE /* callwaiting_tone.mp3 */; };
+		FA19D25E2BECC390008A84AE /* busy_tone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA19D25A2BECC38F008A84AE /* busy_tone.mp3 */; };
+		FA19D25F2BECC390008A84AE /* reorder_tone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA19D25B2BECC390008A84AE /* reorder_tone.mp3 */; };
 		FA8780252AE71D9B00313E89 /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8780242AE71D9B00313E89 /* ProviderDelegate.swift */; };
 		FA8780272AF1551900313E89 /* CallKitUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8780262AF1551800313E89 /* CallKitUtils.swift */; };
+		FACF8FA22BF217FD005991BD /* ExotelVoice.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FACF8F9E2BF2171C005991BD /* ExotelVoice.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,7 +71,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4D85D25728ABBA5500E14E03 /* ExotelVoice.framework in Embed Frameworks */,
+				FACF8FA22BF217FD005991BD /* ExotelVoice.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,8 +138,14 @@
 		A7459C87E3A92BAF78825AA0 /* Pods-ExotelVoiceSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExotelVoiceSample.debug.xcconfig"; path = "Target Support Files/Pods-ExotelVoiceSample/Pods-ExotelVoiceSample.debug.xcconfig"; sourceTree = "<group>"; };
 		BC82E0B75CC0AAF3CD983048 /* Pods-ExotelVoiceSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExotelVoiceSample.release.xcconfig"; path = "Target Support Files/Pods-ExotelVoiceSample/Pods-ExotelVoiceSample.release.xcconfig"; sourceTree = "<group>"; };
 		DC5C09D70209821A63016F57 /* Pods_ExotelVoiceSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExotelVoiceSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA19D2572BECC38F008A84AE /* exotel_ringtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = exotel_ringtone.mp3; path = ExotelVoiceSample/Sound/exotel_ringtone.mp3; sourceTree = "<group>"; };
+		FA19D2582BECC38F008A84AE /* callwaiting_tone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = callwaiting_tone.mp3; path = ExotelVoiceSample/Sound/callwaiting_tone.mp3; sourceTree = "<group>"; };
+		FA19D2592BECC38F008A84AE /* exotel_ringtone_20.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = exotel_ringtone_20.wav; path = ExotelVoiceSample/Sound/exotel_ringtone_20.wav; sourceTree = "<group>"; };
+		FA19D25A2BECC38F008A84AE /* busy_tone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = busy_tone.mp3; path = ExotelVoiceSample/Sound/busy_tone.mp3; sourceTree = "<group>"; };
+		FA19D25B2BECC390008A84AE /* reorder_tone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = reorder_tone.mp3; path = ExotelVoiceSample/Sound/reorder_tone.mp3; sourceTree = "<group>"; };
 		FA8780242AE71D9B00313E89 /* ProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
 		FA8780262AF1551800313E89 /* CallKitUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKitUtils.swift; sourceTree = "<group>"; };
+		FACF8F9E2BF2171C005991BD /* ExotelVoice.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ExotelVoice.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +184,12 @@
 		01499AC527390465009387FD = {
 			isa = PBXGroup;
 			children = (
+				FACF8F9E2BF2171C005991BD /* ExotelVoice.xcframework */,
+				FA19D25A2BECC38F008A84AE /* busy_tone.mp3 */,
+				FA19D2582BECC38F008A84AE /* callwaiting_tone.mp3 */,
+				FA19D2592BECC38F008A84AE /* exotel_ringtone_20.wav */,
+				FA19D2572BECC38F008A84AE /* exotel_ringtone.mp3 */,
+				FA19D25B2BECC390008A84AE /* reorder_tone.mp3 */,
 				01499AD027390465009387FD /* ExotelVoiceSample */,
 				01499ACF27390465009387FD /* Products */,
 				EB996DBB445622343C7C8BEA /* Pods */,
@@ -316,12 +328,12 @@
 			buildConfigurationList = 01499AE227390467009387FD /* Build configuration list for PBXNativeTarget "ExotelVoiceSample" */;
 			buildPhases = (
 				2D7592BE7C292B82571FE0C1 /* [CP] Check Pods Manifest.lock */,
+				4D85D25828ABBA5500E14E03 /* Embed Frameworks */,
 				01499ACA27390465009387FD /* Sources */,
 				01499ACB27390465009387FD /* Frameworks */,
 				01499ACC27390465009387FD /* Resources */,
 				8776CE53FA97E609FD49713B /* [CP] Embed Pods Frameworks */,
 				57C3033A28605BC10009144B /* ShellScript */,
-				4D85D25828ABBA5500E14E03 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -338,8 +350,9 @@
 		01499AC627390465009387FD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					01499ACD27390465009387FD = {
 						CreatedOnToolsVersion = 12.5;
@@ -369,26 +382,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA19D25C2BECC390008A84AE /* exotel_ringtone.mp3 in Resources */,
+				FA19D25D2BECC390008A84AE /* callwaiting_tone.mp3 in Resources */,
+				57C2B7012881622800472AD4 /* exotel_ringtone_20.wav in Resources */,
+				FA19D25E2BECC390008A84AE /* busy_tone.mp3 in Resources */,
+				FA19D25F2BECC390008A84AE /* reorder_tone.mp3 in Resources */,
 				012436A6273927EA004F36E9 /* Roboto-BoldItalic.ttf in Resources */,
 				012436A1273927EA004F36E9 /* Roboto-ThinItalic.ttf in Resources */,
 				012436AB273927EA004F36E9 /* Roboto-LightItalic.ttf in Resources */,
 				012436A4273927EA004F36E9 /* Roboto-Regular.ttf in Resources */,
-				57D242B3285C376E007AE331 /* exotel_ringtone.mp3 in Resources */,
 				012436A8273927EA004F36E9 /* Roboto-Light.ttf in Resources */,
 				01499ADE27390467009387FD /* LaunchScreen.storyboard in Resources */,
 				012436A3273927EA004F36E9 /* Roboto-Thin.ttf in Resources */,
 				012436AC273927EA004F36E9 /* Roboto-Italic.ttf in Resources */,
-				57D242B2285C376E007AE331 /* callwaiting_tone.mp3 in Resources */,
-				57C2B7012881622800472AD4 /* exotel_ringtone_20.wav in Resources */,
 				012436A5273927EA004F36E9 /* LICENSE.txt in Resources */,
 				012436A2273927EA004F36E9 /* Roboto-Bold.ttf in Resources */,
 				012436A9273927EA004F36E9 /* Roboto-Medium.ttf in Resources */,
 				012436AA273927EA004F36E9 /* Roboto-Black.ttf in Resources */,
 				1863461627A2A9FC00CA4870 /* GoogleService-Info.plist in Resources */,
-				57D242B4285C376E007AE331 /* busy_tone.mp3 in Resources */,
 				012436AD273927EA004F36E9 /* Roboto-MediumItalic.ttf in Resources */,
 				012436A7273927EA004F36E9 /* Roboto-BlackItalic.ttf in Resources */,
-				57D242B5285C376E007AE331 /* reorder_tone.mp3 in Resources */,
 				01499ADB27390467009387FD /* Assets.xcassets in Resources */,
 				01499AD927390465009387FD /* Main.storyboard in Resources */,
 			);
@@ -439,6 +452,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -563,6 +577,7 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -627,6 +642,7 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -656,11 +672,12 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 92;
+				CURRENT_PROJECT_VERSION = 95;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = D6JC9BY9C7;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = D6JC9BY9C7;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9MNNV436TM;
 				ENABLE_BITCODE = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -668,18 +685,18 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = ExotelVoiceSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DHIDE_MULTI_CALL";
-				PRODUCT_BUNDLE_IDENTIFIER = com.exotel.voicesample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.exotel.apptoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Exotel Voice Sample App Developer Profile";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Exotel Voice App2App Developer Profile";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				TVOS_DEPLOYMENT_TARGET = "";
@@ -699,10 +716,11 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 93;
+				CURRENT_PROJECT_VERSION = 95;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = D6JC9BY9C7;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9MNNV436TM;
 				ENABLE_BITCODE = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -710,18 +728,18 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = ExotelVoiceSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DHIDE_MULTI_CALL";
-				PRODUCT_BUNDLE_IDENTIFIER = com.exotel.voicesample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.exotel.apptoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Exotel Voice Sample App Developer Profile";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Exotel Voice App2App Developer Profile";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				TVOS_DEPLOYMENT_TARGET = "";

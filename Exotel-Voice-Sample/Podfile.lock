@@ -118,11 +118,11 @@ PODS:
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
+  - Alamofire
   - DropDown
-  - Firebase/Analytics (= 8.13.0)
+  - Firebase/Analytics
   - Firebase/Crashlytics
-  - Firebase/Messaging (= 8.13.0)
+  - Firebase/Messaging
   - IQKeyboardManagerSwift (= 6.3.0)
   - SQLite.swift (~> 0.11.5)
   - SVProgressHUD
@@ -166,6 +166,6 @@ SPEC CHECKSUMS:
   SQLite.swift: 46d890be8601964454bd3392527f863d1b802d45
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: b2fab8bf7b8f54a51e4cd06493c8ebae3512c40c
+PODFILE CHECKSUM: 43e01d14d18b8cf179054d173bbf67c5478e642e
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.15.2
