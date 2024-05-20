@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 * [AP2AP-245](https://exotel.atlassian.net/browse/AP2AP-245) : using new bluetooth toggeling APIs to topgle audio
 * [AP2AP-207](https://exotel.atlassian.net/browse/AP2AP-207) : integrated call kit UI
 * [VST-668](https://exotel.atlassian.net/browse/VST-668) : resolved ios simulator build issue and  added xcframework .
+* using new stop and onDeitinialized API introduced in sdk version 1.0.4
 
 ## [v1.0 build 92] 28-08-2023
 
