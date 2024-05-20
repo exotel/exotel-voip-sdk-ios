@@ -115,7 +115,7 @@ public class VoiceAppService {
         VoiceAppLogger.debug(TAG: TAG, message: "Start: De-Initialize Voice App Service")
         
         UserDefaults.standard.reset()
-        reset()
+        stop()
         
         if exotelVoiceClient?.isInitialized() ?? false {
             VoiceAppLogger.error(TAG: TAG, message: "Failed to De-Initialize Voice App Service")
@@ -143,6 +143,23 @@ public class VoiceAppService {
         }
         
         VoiceAppLogger.debug(TAG: TAG, message: "End: Reset in Sample App Service")
+    }
+    
+    public func stop() {
+        VoiceAppLogger.debug(TAG: TAG, message: "Stop Sample application Service")
+        
+        if(nil == exotelVoiceClient || !(exotelVoiceClient?.isInitialized() ?? false)) {
+            VoiceAppLogger.debug(TAG: TAG, message: "SDK is not yet initialized")
+        }
+        do {
+            try exotelVoiceClient?.stop()
+        } catch let resetError as ExotelVoiceError {
+            VoiceAppLogger.debug(TAG: TAG, message: "Exception in stop: \(resetError.getErrorMessage())")
+        } catch let error {
+            VoiceAppLogger.debug(TAG: TAG, message: "\(error.localizedDescription)")
+        }
+        
+        VoiceAppLogger.debug(TAG: TAG, message: "End: Stop in Sample App Service")
     }
     
     private func dialSDK(destination: String, _ message: String) throws -> Call? {
@@ -392,8 +409,13 @@ extension VoiceAppService: ExotelVoiceClientEventListener {
     }
     
     public func onInitializationFailure(error: ExotelVoiceError) {
-        VoiceAppLogger.debug(TAG: TAG, message: "Initialization Failure")
+        VoiceAppLogger.debug(TAG: TAG, message: "Initialization Failure : \(error.getErrorMessage())")
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: initFailedKey), object: nil, userInfo: ["payload": error])
+    }
+    
+    public func onDeinitialized() {
+        VoiceAppLogger.debug(TAG: TAG, message: "onDeinitialized")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: initFailedKey), object: nil, userInfo: ["payload": "deinialized"])
     }
     
     public func onLog(level: LogLevel, tag: String, message: String) {
