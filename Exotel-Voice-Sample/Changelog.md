@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.0.7] 25-07-2024
+
+### Added
+*[VST-801] configuration sending event metrics
+
 ## [unreleased]
 
 ### Added
