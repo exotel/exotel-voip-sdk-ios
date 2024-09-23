@@ -444,6 +444,10 @@ extension VoiceAppService: ExotelVoiceClientEventListener {
         VoiceAppLogger.debug(TAG: TAG, message: "Failed to authenticate: Type: \(error.getErrorType()) message: \(error.getErrorMessage())")
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: authFailedKey), object: error, userInfo: ["payload": error])
     }
+
+    public func onInitializationDelay() {
+        VoiceAppLogger.debug(TAG: TAG, message : "onInitializationDelay")
+    }
 }
 
 extension VoiceAppService: CallListener {
