@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.8] 23-09-2024
+* [VST-842]
+** exposed event for onInitializationDelay if sdk intialization takes more than 5 sec 
+** appendLog crash fix for EXC_BREAKPOINT
+
 ## [v1.0.7] 25-07-2024
 
 ### Added
