@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.10] 30-09-2024
+* [VST-842]
+** pj_pool_release crash fix 
+** pj_lock_acquire crash fix
+
+
 ## [1.0.8] 23-09-2024
 * [VST-842]
 ** exposed event for onInitializationDelay if sdk intialization takes more than 5 sec 
