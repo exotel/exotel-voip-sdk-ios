@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.11] 25-11-2024
+* [VST-881]
+  ** Adding delay in stop function, and checking system state (Fatal message crash fix)
+
 ## [1.0.10] 30-09-2024
 * [VST-842]
 ** pj_pool_release crash fix 
