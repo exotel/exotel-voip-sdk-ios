@@ -403,6 +403,10 @@ public class VoiceAppService {
 }
 
 extension VoiceAppService: ExotelVoiceClientEventListener {
+    public func onAlreadyIntialized() {
+        VoiceAppLogger.debug(TAG: TAG, message: "In onAlreadyIntialized")
+    }
+    
     public func onInitializationSuccess() {
         VoiceAppLogger.debug(TAG: TAG, message: "Initialization Success")
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: initSuccessKey), object: nil, userInfo: ["payload": "success"])
