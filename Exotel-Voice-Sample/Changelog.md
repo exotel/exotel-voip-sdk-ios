@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.12] 20-11-2024
+* [VST-899]
+  ** Added a call to self.onSipStarted() during the Cloudonix initialization process and updated the stop() function to ensure it waits for the completion of each function before proceeding to the next.
+
 ## [1.0.11] 25-11-2024
 * [VST-881]
   ** Adding delay in stop function, and checking system state (Fatal message crash fix)
