@@ -9,21 +9,30 @@ import AVFoundation
 import Firebase
 import ExotelVoice
 import UserNotifications
+import PushKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder,UIApplicationDelegate {
     var user_callerId = ""
     var user_sessionid = ""
     var window: UIWindow?
     let TAG = "AppDelegate"
     var repeatingTimer : RepeatingTimer!
+    var pushRegistry: PKPushRegistry?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+ 
+        VoiceAppLogger.setFilesDir()
         
+        // Initialize PushKit for VoIP notifications
+          pushRegistry = PKPushRegistry(queue: DispatchQueue.main)
+          pushRegistry?.delegate = self
+          pushRegistry?.desiredPushTypes = [.voIP]
+        // Override point for customization after application launch.
         FirebaseApp.configure()
         application.registerForRemoteNotifications()
-        Messaging.messaging().delegate = self
+//        Messaging.messaging().delegate = self
+        
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
@@ -50,9 +59,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             VoiceAppLogger.debug(TAG: TAG, message: "Microphone permission coming to default ")
         }
         
+        
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
-            UNUserNotificationCenter.current().delegate = self
+//            UNUserNotificationCenter.current().delegate = self
             
             let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
             UNUserNotificationCenter.current().requestAuthorization(
@@ -79,7 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerUserNotificationSettings(settings)
         }
         
-        VoiceAppLogger.setFilesDir()
+        
         if #available(iOS 14.0, *) {
             CallKitUtils.inializeCallKit()
         }
@@ -130,100 +140,112 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-extension AppDelegate : MessagingDelegate {
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        if let fcmToken = fcmToken {
-            VoiceAppLogger.debug(TAG: TAG, message:"Firebase registration token: \(String(describing: fcmToken))")
-            UserDefaults.standard.set((String(describing: fcmToken)), forKey: UserDefaults.Keys.firebaseToken.rawValue)
-            let dataDict: [String: String] = ["token": fcmToken ]
+extension AppDelegate: PKPushRegistryDelegate {
+    func pushRegistry(_ registry: PKPushRegistry, didUpdate pushCredentials: PKPushCredentials, for type: PKPushType) {
+        guard type == .voIP else { return }
+        
+        
+        let token = pushCredentials.token.map { String(format: "%02x", $0) }.joined()
+        
+        if(token.isEmpty) {
+            VoiceAppLogger.debug(TAG: TAG, message: "FCM Token is not generated yet!!")
+            return
+        }
+        VoiceAppLogger.debug(TAG: TAG, message: "PushKit token: \(token)")
+//        showToast(message:token)
+        VoiceAppLogger.debug(TAG: TAG, message:"Firebase registration token: \(String(describing: token))")
+        UserDefaults.standard.set((String(describing: token)), forKey: UserDefaults.Keys.firebaseToken.rawValue)
+        let dataDict: [String: String] = ["token": token ]
             NotificationCenter.default.post(
                 name: Notification.Name("FCMToken"),
                 object: nil,
                 userInfo: dataDict)
-        } else {
-            VoiceAppLogger.debug(TAG: TAG, message: "FCM Token is not generated yet!!")
-        }
-        
+        // Send token to your server for VoIP notifications
     }
+
+    func pushRegistry(_ registry: PKPushRegistry, didReceiveIncomingPushWith payload: PKPushPayload, for type: PKPushType, completion: @escaping () -> Void) {
+           
+            VoiceAppLogger.debug(TAG: TAG, message: "VoIP push received ")
+
+          ApplicationUtils.checkMicrophonePermission() { isEnabled in
+              if isEnabled == false {
+                  UserDefaults.standard.set("false", forKey: UserDefaults.Keys.isLoggedIn.rawValue)
+                 completion()
+                  return
+              }
+          }
+          
+        
+        
+          ApplicationUtils.checkNotificationsPermission() { isEnabled in
+              if isEnabled == false {
+                  UserDefaults.standard.set("false", forKey: UserDefaults.Keys.isLoggedIn.rawValue)
+                  completion()
+                  return
+              }
+          }
+            guard let payloadDict = payload.dictionaryPayload as? [String: Any] else {
+                 VoiceAppLogger.error(TAG: TAG, message: "Invalid payload format")
+                completion()
+                return
+               
+            }
+          
+            // Extract notification data
+                  
+             guard let callerId = payloadDict["subscriberName"] as? String else {
+                 VoiceAppLogger.error(TAG: TAG, message: "callerId not found in payload")
+                 completion()
+                 return
+             }
+            
+        
+            VoiceAppService.shared.pushNotificationData = payloadDict
+            let validateLogin = UserDefaults.standard.string(forKey: UserDefaults.Keys.isLoggedIn.rawValue) ?? "false"
+            if validateLogin == "false" {
+                VoiceAppLogger.error(TAG: TAG, message: "User is not logged into App")
+                 completion()
+                return
+            }
+            
+        
+            let state = UIApplication.shared.applicationState
+            if state == .background || state == .inactive {
+                VoiceAppLogger.debug(TAG: TAG, message: "App receiving notification in background mode\(state)")
+//                NotificationPublisher.shared.pushNotificationData = userInfo
+//                NotificationPublisher.shared.sendNotification(callerName: callerId)
+                repeatingTimer = RepeatingTimer(timeInterval: 25.0)
+                repeatingTimer.eventHandler = { [self] in
+                    DispatchQueue.global(qos: .background).async {
+                        UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ["CALL_ARRIVED"])
+                        VoiceAppLogger.debug(TAG: self.TAG, message: "Notification cleared")
+                        self.repeatingTimer = nil
+                    }
+                }
+                repeatingTimer.resume()
+                
+        
+                
+            } else if state == .active {
+                VoiceAppLogger.debug(TAG: TAG, message: "App receiving notification in foreground mode")
+    //            VoiceAppService.shared.onReceivePushNotification()
+            }
+    //        completionHandler(UIBackgroundFetchResult.newData)
+            
+            
+        
+
+//        let _: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        CallKitUtils.displayIncomingCall(handle: callerId)
+//        let incomingVC = storyBoard.instantiateViewController(withIdentifier: "IncomingCallViewController") as! IncomingCallViewController
+     completion()
+            
+        }
 }
 
-@available(iOS 10, *)
-extension AppDelegate: UNUserNotificationCenterDelegate {
-    func application(_ application: UIApplication,
-                     didReceiveRemoteNotification userInfo: [AnyHashable: Any],
-                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult)
-                     -> Void) {
-        ApplicationUtils.checkMicrophonePermission() { isEnabled in
-            if isEnabled == false {
-                UserDefaults.standard.set("false", forKey: UserDefaults.Keys.isLoggedIn.rawValue)
-                return
-            }
-        }
-        
-        ApplicationUtils.checkNotificationsPermission() { isEnabled in
-            if isEnabled == false {
-                UserDefaults.standard.set("false", forKey: UserDefaults.Keys.isLoggedIn.rawValue)
-                return
-            }
-        }
-        
-        guard let data = try? PushNotificationData(decoding: userInfo) else {
-            VoiceAppLogger.error(TAG: TAG, message: "Error in converting userInfo to data")
-            return
-        }
-        
-        VoiceAppLogger.debug(TAG: TAG, message: "Push notification data:\n\(data.getNotificationResponse())")
-        let localData = userInfo[AnyHashable("payload")] as? String ?? ""
-        let payloadData = decode(jwtToken: localData)
-        user_callerId = payloadData["callerId"] as? String ?? ""
-        
-        if data.subscriberName != UserDefaults.standard.string(forKey: UserDefaults.Keys.subscriberName.rawValue) ?? "" {
-            VoiceAppLogger.error(TAG: TAG, message: "User ID in push notification: \(data.subscriberName) Current User Id: \(UserDefaults.standard.string(forKey: UserDefaults.Keys.subscriberName.rawValue) ?? "")")
-            return
-        }
-        
-        let validateLogin = UserDefaults.standard.string(forKey: UserDefaults.Keys.isLoggedIn.rawValue) ?? "false"
-        if validateLogin == "false" {
-            VoiceAppLogger.error(TAG: TAG, message: "User is not logged into App")
-            return
-        }
-        
-        let state = UIApplication.shared.applicationState
-        if state == .background || state == .inactive {
-            VoiceAppLogger.debug(TAG: TAG, message: "App receiving notification in background mode\(state)")
-            NotificationPublisher.shared.pushNotificationData = userInfo
-            NotificationPublisher.shared.sendNotification(callerName: user_callerId)
-            repeatingTimer = RepeatingTimer(timeInterval: 25.0)
-            repeatingTimer.eventHandler = { [self] in
-                DispatchQueue.global(qos: .background).async {
-                    UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ["CALL_ARRIVED"])
-                    VoiceAppLogger.debug(TAG: self.TAG, message: "Notification cleared")
-                    self.repeatingTimer = nil
-                }
-            }
-            repeatingTimer.resume()
-            
-        } else if state == .active {
-            VoiceAppLogger.debug(TAG: TAG, message: "App receiving notification in foreground mode")
-            VoiceAppService.shared.onReceivePushNotification(pnData: data)
-        }
-        completionHandler(UIBackgroundFetchResult.newData)
-    }
-    
-    // Receive displayed notifications for iOS 10 devices.
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions)
-                                -> Void) {
-        completionHandler([[.alert, .sound]])
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                didReceive response: UNNotificationResponse,
-                                withCompletionHandler completionHandler: @escaping () -> Void) {
-        completionHandler()
-    }
-}
+
+
+
 
 //This is to extract payload data
 extension AppDelegate {
@@ -254,4 +276,41 @@ extension AppDelegate {
         }
         return payload
     }
+    
+    
+    
+    
+    func showToast(message: String) {
+        // Create a label and calculate its size based on the message text
+        let toast = UILabel()
+        toast.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        toast.textColor = .white
+        toast.textAlignment = .center
+        toast.text = message
+        toast.numberOfLines = 0 // Allow multiple lines
+        toast.font = UIFont.systemFont(ofSize: 16)
+        toast.layer.cornerRadius = 10
+        toast.clipsToBounds = true
+        
+        // Calculate size based on the message
+        let maxSize = CGSize(width: UIScreen.main.bounds.width - 40, height: UIScreen.main.bounds.height)
+        let expectedSize = toast.sizeThatFits(maxSize)
+        let width = expectedSize.width + 20
+        let height = expectedSize.height + 20
+        toast.frame = CGRect(x: 20, y: UIScreen.main.bounds.height - height - 50, width: width, height: height)
+        
+        // Add to window and show
+        self.window?.addSubview(toast)
+        
+        // Animate fade-out and remove
+        UIView.animate(withDuration: 10.0, delay: 2.0, options: .curveEaseOut, animations: {
+            toast.alpha = 0.0
+        }) { _ in
+            toast.removeFromSuperview()
+        }
+    }
+
+    
+    
+    
 }

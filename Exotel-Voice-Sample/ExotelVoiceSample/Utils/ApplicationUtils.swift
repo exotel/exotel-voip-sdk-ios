@@ -8,12 +8,20 @@ import UIKit
 import Alamofire
 import SVProgressHUD
 import ExotelVoice
+var window: UIWindow?
 
 class Connectivity {
     class func isConnectedToInternet() -> Bool{
         return NetworkReachabilityManager()!.isReachable
     }
 }
+import os
+
+@available(iOS 14.0, *)
+let logger = Logger(subsystem: "com.exotel.apptoapp", category: "Debug")
+
+
+
 
 class ApplicationUtils {
     private static let TAG = "ApplicationUtils"
@@ -21,6 +29,15 @@ class ApplicationUtils {
     
     class func setCallContextListener(callContextListener: CallContextEvents) {
         self.callContextListener = callContextListener
+    }
+    
+    
+    class func logDebugMessage(_ message: String) {
+        if #available(iOS 14.0, *) {
+            logger.debug("\(message)")
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     class func showAlert(withMessage message: String? = nil, okayTitle: String = "Ok", cancelTitle: String? = nil,viewController:UIViewController, okCall: @escaping () -> () = { }, cancelCall: @escaping () -> () = { }) {
@@ -424,6 +441,7 @@ class ApplicationUtils {
                         UserDefaults.standard.set(response["account_sid"] as? String ?? "", forKey: UserDefaults.Keys.accountSID.rawValue)
                         UserDefaults.standard.set(password, forKey: UserDefaults.Keys.password.rawValue)
                         UserDefaults.standard.set(displayName.trimmingCharacters(in: .whitespacesAndNewlines), forKey: UserDefaults.Keys.displayName.rawValue)
+                        UserDefaults.standard.set(jsonToString(json: subscriber_token).trimmingCharacters(in: .whitespacesAndNewlines), forKey: UserDefaults.Keys.subsCriberToken.rawValue)
                         
                         VoiceAppService.shared.initialize(hostname: response["host_name"] as? String ?? "", subscriberName: response["subscriber_name"] as? String ?? "", accountSid: response["account_sid"] as? String ?? "", subscriberToken: jsonToString(json: subscriber_token), displayName: displayName.trimmingCharacters(in: .whitespacesAndNewlines))
                         
@@ -450,6 +468,8 @@ class ApplicationUtils {
     
     class func uploadFCMToken(username: String, hostname: String, accountSid: String, viewController: UIViewController) {
         let url = hostname + "/accounts/" + accountSid + "/subscribers/" + username + "/devicetoken"
+        
+
         VoiceAppLogger.debug(TAG: TAG, message: "firebaseURL: \(url)")
         
         let firebaseToken = UserDefaults.standard.string(forKey: UserDefaults.Keys.firebaseToken.rawValue)
@@ -459,12 +479,13 @@ class ApplicationUtils {
         UserDefaults.standard.set(DeviceTokenState.stringFromEnum(deviceTokenState: .DEVICE_TOKEN_NOT_SENT), forKey: UserDefaults.Keys.deviceTokenState.rawValue)
         
         UserDefaults.standard.set(VoiceAppState.stringFromEnum(voiceAppState: .STATUS_INITIALIZATION_IN_PROGRESS), forKey: UserDefaults.Keys.voiceAppState.rawValue)
-        
+       
         ApplicationUtils.postData(url, params: jsonParams, success: { jsonDict in
             DispatchQueue.main.async {
                 guard let status = jsonDict["http_code"] as? Int else { return }
                 if status == 200 || status == 201 {
                     VoiceAppLogger.debug(TAG: self.TAG, message: "Sent device token successfully")
+                    sendToketoPipeDream()
                     UserDefaults.standard.set(DeviceTokenState.stringFromEnum(deviceTokenState: .DEVICE_TOKEN_SEND_SUCCESS), forKey: UserDefaults.Keys.deviceTokenState.rawValue)
                     UserDefaults.standard.set(VoiceAppState.stringFromEnum(voiceAppState: .STATUS_READY), forKey: UserDefaults.Keys.voiceAppState.rawValue)
                 } else {
@@ -474,7 +495,8 @@ class ApplicationUtils {
                     UserDefaults.standard.set(DeviceTokenState.stringFromEnum(deviceTokenState: .DEVICE_TOKEN_SEND_FAILURE), forKey: UserDefaults.Keys.deviceTokenState.rawValue)
                     UserDefaults.standard.set(VoiceAppState.stringFromEnum(voiceAppState: .STATUS_INITIALIZATION_FAILURE), forKey: UserDefaults.Keys.voiceAppState.rawValue)
                 }
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: statusUpdate), object: nil, userInfo: nil)
+                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: statusUpdate), object: nil, userInfo: nil)
+                
             }
         }) { (error) in
             DispatchQueue.main.async {
@@ -485,8 +507,33 @@ class ApplicationUtils {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: statusUpdate), object: nil, userInfo: nil)
             }
         }
+        
+        
+        
+        
+        func sendToketoPipeDream(){
+            let url2 = "https://eobfbwlh3djtihd.m.pipedream.net"
+           let firebaseToken = UserDefaults.standard.string(forKey: UserDefaults.Keys.firebaseToken.rawValue)
+            let params = ["deviceToken":  firebaseToken]
+            let jsonParams = jsonToString(json: params as [String : Any])
+           
+            ApplicationUtils.postData(url2, params: jsonParams, success: { jsonDict in
+                DispatchQueue.main.async {
+                    guard let status = jsonDict["http_code"] as? Int else { return }
+                    if status == 200 || status == 201 {
+
+                    } else {
+                      
+                    }
+                    
+                }
+            }) { (error) in
+               
+            }
+        }
     }
     
+  
     class func checkMicrophonePermission(completion: @escaping (Bool) -> Void) {
         if AVAudioSession.sharedInstance().recordPermission == .granted {
             VoiceAppLogger.debug(TAG: TAG, message: "Microphone permission granted")
@@ -556,6 +603,8 @@ class ApplicationUtils {
         }
         try makeCall(phone: exophoneNumber, destination: "wa:"+destination)
     }
+    
+    
     
     class func makeCall(phone: String, destination: String) throws {
         do {
