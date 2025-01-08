@@ -6,6 +6,7 @@
 import Foundation
 import ExotelVoice
 import UIKit
+import PushKit
 
 let incomingCallKey = "kIncomingCall"
 let initiateCallKey = "kInitiatedCall"
@@ -22,6 +23,8 @@ let statusUpdate = "kStatusUpdate"
 let disruptedCallKey = "kDisruptedCall"
 let renewedCallKey = "kRenewedCall"
 
+
+
 let missingMicrophonePermissionStr = "Microphone Permission is missing. Please enable microphone permission under \"Settings -> Exotel Voice Sample -> Microphone\" for this app"
 let missingNotificationPermissionStr = "Notifications Permission is missing. Please enable notifications permission under \"Settings -> Exotel Voice Sample -> Notifications -> Allow Notifications\" for this app"
 
@@ -30,19 +33,21 @@ public class VoiceAppService {
     private let TAG = "VoiceAppService"
     private var exotelVoiceClient: ExotelVoiceClient?
     private var callController: CallController?
-    private var mCall: Call?
+    private var  mCall: Call?
     private var mPreviousCall: Call?
     private var ringingStartTime: Double = 0
     private var initializationInProgress:Bool = false
     private var initializationErrorMessage:String = ""
     private var tonePlayback = RingTonePlayback()
+    var pushNotificationData: [AnyHashable : Any]?
     
     // isReadyToReceiveCalls flag will be true when HomeViewController view will appear
     private var isReadyToReceiveCalls:DarwinBoolean = false
     
     let databaseHelper = DatabaseHelper.shared
     
-    public func sendPushNotificationData(payload: String, payloadVersion: String, userId: String) -> Void {
+    public func sendPushNotificationData
+    (payload: String, payloadVersion: String, userId: String) -> Void {
         VoiceAppLogger.debug(TAG: TAG, message: "Sending push notification data function")
         
         VoiceAppLogger.debug(TAG: TAG, message: "Push notification data:")
@@ -77,6 +82,7 @@ public class VoiceAppService {
             self.callController?.setCallListener(callListener: self)
             
             VoiceAppLogger.debug(TAG: self.TAG, message: "Returning from exotel voice client init")
+            
         }
     }
     
@@ -330,6 +336,10 @@ public class VoiceAppService {
         }
     }
     
+    public func isInitialize()-> Bool {
+       return exotelVoiceClient?.isInitialized() ?? false
+    }
+    
     public func getCurrentStatus() -> VoiceAppStatus {
         let status = VoiceAppStatus()
         VoiceAppLogger.debug(TAG: TAG, message: "Start: getCurrentStatus")
@@ -402,7 +412,14 @@ public class VoiceAppService {
     }
 }
 
+
+
+
 extension VoiceAppService: ExotelVoiceClientEventListener {
+    public func onAlreadyIntialized() {
+        VoiceAppLogger.debug(TAG: TAG, message: "onAlreadyIntialized ")
+    }
+    
     public func onInitializationSuccess() {
         VoiceAppLogger.debug(TAG: TAG, message: "Initialization Success")
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: initSuccessKey), object: nil, userInfo: ["payload": "success"])
@@ -446,9 +463,11 @@ extension VoiceAppService: ExotelVoiceClientEventListener {
     }
 
     public func onInitializationDelay() {
+        onInitializationSuccess()
         VoiceAppLogger.debug(TAG: TAG, message : "onInitializationDelay")
     }
 }
+
 
 extension VoiceAppService: CallListener {
     public func onIncomingCall(call: Call) {
@@ -457,13 +476,17 @@ extension VoiceAppService: CallListener {
         mCall = call
         let userInfo: [String: Any] = ["callState": CallState.INCOMING, "callerID": call.getCallDetails().getRemoteId(), "callerName": call.getCallDetails().getRemoteId(), "context": call.getContextMessage()]
         // Dalay added  for background incoming call because Accept Reject Popup needs to come after  HomeViewController view appears
-        if(isReadyToReceiveCalls==false){
-            let seconds = 2.0
-            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: incomingCallKey), object: call, userInfo: userInfo)
-            }
-        }else{
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: incomingCallKey), object: call, userInfo: userInfo)
+//        if(isReadyToReceiveCalls==false){
+//            let seconds = 2.0
+//            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: incomingCallKey), object: call, userInfo: userInfo)
+//            }
+//        }else{
+//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: incomingCallKey), object: call, userInfo: userInfo)
+//        }
+        ApplicationUtils.logDebugMessage("Answering the call")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.answer()
         }
     }
     

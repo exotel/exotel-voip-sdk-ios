@@ -203,7 +203,7 @@ class HomeViewController: UIViewController, UITextViewDelegate {
         ApplicationUtils.getCallContext(remoteId: call.getCallDetails().getRemoteId())
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        CallKitUtils.displayIncomingCall(handle: call.getCallDetails().getRemoteId())
+//        CallKitUtils.displayIncomingCall(handle: call.getCallDetails().getRemoteId())
 //        let incomingVC = storyBoard.instantiateViewController(withIdentifier: "IncomingCallViewController") as! IncomingCallViewController
         destinationNumber = call.getCallDetails().getRemoteId()
         UserDefaults.standard.set(destinationNumber, forKey: UserDefaults.Keys.lastDialedNumber.rawValue)

@@ -20,6 +20,8 @@ class VoiceAppLogger {
         let time = Date().string(format: "HH:mm:ss.SSS")
         text = time + "-" + text
         appendLog(text: text)
+        
+        ApplicationUtils.logDebugMessage(message)
     }
     
     static func info(TAG: String, message: String) {
@@ -28,6 +30,7 @@ class VoiceAppLogger {
         let time = Date().string(format: "HH:mm:ss.SSS")
         text = time + "-" + text
         appendLog(text: text)
+        ApplicationUtils.logDebugMessage(message)
     }
     
     static func error(TAG:String, message:String) {
@@ -36,6 +39,7 @@ class VoiceAppLogger {
         let time = Date().string(format: "HH:mm:ss.SSS")
         text = time + "-" + text
         appendLog(text: text)
+        ApplicationUtils.logDebugMessage(message)
     }
     
     static func warning(TAG:String, message:String) {
@@ -44,6 +48,7 @@ class VoiceAppLogger {
         let time = Date().string(format: "HH:mm:ss.SSS")
         text = time + "-" + text
         appendLog(text: text)
+        ApplicationUtils.logDebugMessage(message)
     }
     
     public static func setFilesDir() {

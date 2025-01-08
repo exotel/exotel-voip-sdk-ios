@@ -24,6 +24,7 @@ extension UserDefaults {
         case toastMessage
         case contextMessage
         case contextDisplayName
+        case subsCriberToken
     }
     
     func reset() {
