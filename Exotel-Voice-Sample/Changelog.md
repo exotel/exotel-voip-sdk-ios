@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+
+## [1.0.13] 11-02-2025
+* [VST-899]
+  ** Update the sdk version with from 1.0.12 to 1.0.13 
+
 ## [1.0.12] 20-11-2024
 * [VST-899]
   ** Added a call to self.onSipStarted() during the Cloudonix initialization process and updated the stop() function to ensure it waits for the completion of each function before proceeding to the next.
