@@ -6,7 +6,7 @@
 import UIKit
 import ExotelVoice
 import NotificationCenter
-import CallKit
+//import CallKit
 
 class CallViewController: UIViewController, CallContextEvents {
     @IBOutlet weak var muteBtn: UIButton!
@@ -76,9 +76,9 @@ class CallViewController: UIViewController, CallContextEvents {
         VoiceAppLogger.debug(TAG: TAG, message: "Call Ringing")
         DispatchQueue.main.async {
             self.callStatusLbl.text = "Ringing.."
-            if #available(iOS 14.0, *) {
-                    CallKitUtils.reportConnectingOutgoingCall()
-            }
+//            if #available(iOS 14.0, *) {
+//                    CallKitUtils.reportConnectingOutgoingCall()
+//            }
         }
     }
     
@@ -118,9 +118,9 @@ class CallViewController: UIViewController, CallContextEvents {
             self.speakerBtn.isHidden = false
             self.muteBtn.isHidden  = false
             VoiceAppLogger.debug(TAG: self.TAG, message: "CUSTOM :: 1 ")
-            if #available(iOS 14.0, *) {
-                    CallKitUtils.reportConnectedOutgoingCall()
-            }
+//            if #available(iOS 14.0, *) {
+//                    CallKitUtils.reportConnectedOutgoingCall()
+//            }
         }
     }
     
@@ -202,7 +202,7 @@ class CallViewController: UIViewController, CallContextEvents {
             self.timer.invalidate()
             self.timeLbl.isHidden = true
             self.callStatusLbl.text = "call ended"
-            CallKitUtils.endCallonCallkit()
+//            CallKitUtils.endCallonCallkit()
             self.navigationController?.popToViewController(of: HomeViewController.self, animated: true)
             UserDefaults.standard.set(callEndedMessage, forKey: UserDefaults.Keys.toastMessage.rawValue)
         }
@@ -257,7 +257,7 @@ class CallViewController: UIViewController, CallContextEvents {
         DispatchQueue.main.async {
             do {
                 try VoiceAppService.shared.hangup()
-                CallKitUtils.endCallonCallkit()
+//                CallKitUtils.endCallonCallkit()
             } catch let error {
                 VoiceAppLogger.debug(TAG: self.TAG, message: "Error: \(error.localizedDescription)")
             }
