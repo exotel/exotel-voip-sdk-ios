@@ -203,13 +203,13 @@ class HomeViewController: UIViewController, UITextViewDelegate {
         ApplicationUtils.getCallContext(remoteId: call.getCallDetails().getRemoteId())
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        CallKitUtils.displayIncomingCall(handle: call.getCallDetails().getRemoteId())
-//        let incomingVC = storyBoard.instantiateViewController(withIdentifier: "IncomingCallViewController") as! IncomingCallViewController
+//        CallKitUtils.displayIncomingCall(handle: call.getCallDetails().getRemoteId())
+        let incomingVC = storyBoard.instantiateViewController(withIdentifier: "IncomingCallViewController") as! IncomingCallViewController
         destinationNumber = call.getCallDetails().getRemoteId()
         UserDefaults.standard.set(destinationNumber, forKey: UserDefaults.Keys.lastDialedNumber.rawValue)
-//        incomingVC.caller_id = destinationNumber
-//        incomingVC.context = call.getContextMessage()
-//        self.navigationController?.pushViewController(incomingVC, animated: true)
+        incomingVC.caller_id = destinationNumber
+        incomingVC.context = call.getContextMessage()
+        self.navigationController?.pushViewController(incomingVC, animated: true)
     }
     
     @objc func onAuthenticationFailure(notification: NSNotification) {

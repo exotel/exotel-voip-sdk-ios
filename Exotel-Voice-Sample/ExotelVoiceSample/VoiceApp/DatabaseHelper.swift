@@ -42,10 +42,10 @@ public class DatabaseHelper {
                 return
             }
             
-            let callId = Expression<Int>(DatabaseHelper.COL_ID)
-            let callerId = Expression<String>(DatabaseHelper.COL_CALLER_ID)
-            let callType = Expression<String>(DatabaseHelper.COL_CALL_TYPE)
-            let callTime = Expression<String>(DatabaseHelper.COL_CALL_TIME)
+            let callId = SQLite.Expression<Int>(DatabaseHelper.COL_ID)
+            let callerId = SQLite.Expression<String>(DatabaseHelper.COL_CALLER_ID)
+            let callType = SQLite.Expression<String>(DatabaseHelper.COL_CALL_TYPE)
+            let callTime = SQLite.Expression<String>(DatabaseHelper.COL_CALL_TIME)
             
             let statement = callTable.create(ifNotExists: true) {t in
                 t.column(callId, primaryKey: .autoincrement)
@@ -96,9 +96,9 @@ public class DatabaseHelper {
             dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss"
             dateTimeString = dateFormatter.string(from: convertDate)
             
-            let colCallerId = Expression<String>(DatabaseHelper.COL_CALLER_ID)
-            let colCallType = Expression<String>(DatabaseHelper.COL_CALL_TYPE)
-            let colCallTime = Expression<String>(DatabaseHelper.COL_CALL_TIME)
+            let colCallerId = SQLite.Expression<String>(DatabaseHelper.COL_CALLER_ID)
+            let colCallType = SQLite.Expression<String>(DatabaseHelper.COL_CALL_TYPE)
+            let colCallTime = SQLite.Expression<String>(DatabaseHelper.COL_CALL_TIME)
             
             let statement = callTable.insert(colCallerId <- callerId, colCallType <- callTypeString, colCallTime <- dateTimeString)
             
@@ -129,7 +129,7 @@ public class DatabaseHelper {
                     try db?.run(statement)
                 }
             } else {
-                let columnCallId = Expression<Int>(DatabaseHelper.COL_ID)
+                let columnCallId = SQLite.Expression<Int>(DatabaseHelper.COL_ID)
                 let statement = callTable.filter(columnCallId == callId).delete()
                 try db?.transaction {
                     try db?.run(statement)
@@ -152,10 +152,10 @@ public class DatabaseHelper {
             
             var recentCallDetailsList: [RecentCallDetails] = []
             
-            let colCallId = Expression<Int>(DatabaseHelper.COL_ID)
-            let colCallerId = Expression<String>(DatabaseHelper.COL_CALLER_ID)
-            let colCallType = Expression<String>(DatabaseHelper.COL_CALL_TYPE)
-            let colCallTime = Expression<String>(DatabaseHelper.COL_CALL_TIME)
+            let colCallId = SQLite.Expression<Int>(DatabaseHelper.COL_ID)
+            let colCallerId = SQLite.Expression<String>(DatabaseHelper.COL_CALLER_ID)
+            let colCallType = SQLite.Expression<String>(DatabaseHelper.COL_CALL_TYPE)
+            let colCallTime = SQLite.Expression<String>(DatabaseHelper.COL_CALL_TIME)
             let rowIterator = try db?.prepareRowIterator(callTable.order([colCallId.desc]))
             
             while let call = try rowIterator?.failableNext() {

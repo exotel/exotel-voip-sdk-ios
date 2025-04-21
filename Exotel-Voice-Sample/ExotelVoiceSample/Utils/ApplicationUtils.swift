@@ -565,7 +565,7 @@ class ApplicationUtils {
             let call = try VoiceAppService.shared.dial(destination: phone, message: UserDefaults.standard.string(forKey: UserDefaults.Keys.contextDisplayName.rawValue) ?? "")
             if call != nil {
                 ApplicationUtils.setCallContext(userId: UserDefaults.standard.string(forKey: UserDefaults.Keys.subscriberName.rawValue) ?? "", destination: destination, message: "")
-                CallKitUtils.startCallOnCallkit(handle: phone)
+//                CallKitUtils.startCallOnCallkit(handle: phone)
             }
 
         } catch let voiceError as VoiceAppError {
