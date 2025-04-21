@@ -80,9 +80,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         VoiceAppLogger.setFilesDir()
-        if #available(iOS 14.0, *) {
-            CallKitUtils.inializeCallKit()
-        }
+//        if #available(iOS 14.0, *) {
+//            CallKitUtils.inializeCallKit()
+//        }
         return true
     }
     
