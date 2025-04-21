@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 
 
+## [1.0.14] 11-02-2025
+* [VST-979]
+  ** Removed call-kit dependency
+
 ## [1.0.13] 11-02-2025
 * [VST-899]
   ** Update the sdk version with from 1.0.12 to 1.0.13 
