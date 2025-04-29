@@ -3,7 +3,11 @@
 All notable changes to this project will be documented in this file.
 
 
-## [1.0.14] 11-02-2025
+## [1.0.15] 29-04-2025
+* [VST-979]
+  ** Added listener in onsipstarted in sync
+
+## [1.0.14] 21-04-2025
 * [VST-979]
   ** Removed call-kit dependency
 
