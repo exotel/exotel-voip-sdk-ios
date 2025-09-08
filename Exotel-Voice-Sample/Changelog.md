@@ -1,6 +1,11 @@
 # Changelog 
 
 All notable changes to this project will be documented in this file.
+
+## [1.0.18] 09-09-2025
+### Added
+* [VST-1068](https://exotel.atlassian.net/browse/VST-1068): fixed s3 log upload.
+
 ## [1.0.17] 01-08-2025
 ### Added
 * [VST-1041](https://exotel.atlassian.net/browse/VST-1041): Added the hangup event matrix and syncing with the backend for SDK stability
