@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.19] 10-09-2025
+### Added
+* [VST-1087](https://exotel.atlassian.net/browse/VST-1087): using cloudonix 5.2.53.35.
+
 ## [1.0.18] 09-09-2025
 ### Added
 * [VST-1087](https://exotel.atlassian.net/browse/VST-1087): fixed s3 log upload.
