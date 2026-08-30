@@ -1,0 +1,4 @@
+
+# VST-2003: never commit real Firebase / Google service configs
+Exotel-Voice-Sample/**/GoogleService-Info.plist
+!Exotel-Voice-Sample/**/GoogleService-Info.plist.sample
